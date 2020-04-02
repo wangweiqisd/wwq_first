@@ -13,7 +13,7 @@ public class HelloController {
     @ResponseBody
     public String say(){
         log.info("hello,小宝贝");
-        System.out.println("hello,小宝a贝");
+        System.out.println("hello,小宝sa贝");
         return "225";
     }
 }
