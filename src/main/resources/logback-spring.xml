@@ -73,33 +73,42 @@
         <prudent>false</prudent>
     </appender>
 
-    <!-- DEBUG级别日志 -->
-    <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>DEBUG</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logDir}\%d{yyyyMMdd}\debug.log</fileNamePattern>
-            <maxHistory>${maxHistory}</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
-            <charset class="java.nio.charset.Charset">UTF-8</charset>
-        </encoder>
-        <append>false</append>
-        <prudent>false</prudent>
-    </appender>
+<!--    &lt;!&ndash; DEBUG级别日志 &ndash;&gt;-->
+<!--    <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>DEBUG</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${logDir}\%d{yyyyMMdd}\debug.log</fileNamePattern>-->
+<!--            <maxHistory>${maxHistory}</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>-->
+<!--            <charset class="java.nio.charset.Charset">UTF-8</charset>-->
+<!--        </encoder>-->
+<!--        <append>false</append>-->
+<!--        <prudent>false</prudent>-->
+<!--    </appender>-->
 
     <!-- root级别  DEBUG -->
-    <root level="DEBUG">
+    <root level="INFO">
         <!-- 控制台输出 -->
         <appender-ref ref="STDOUT" />
         <!-- 文件输出 -->
         <appender-ref ref="ERROR" />
         <appender-ref ref="INFO" />
         <appender-ref ref="WARN" />
-        <appender-ref ref="DEBUG" />
+<!--    <appender-ref ref="DEBUG" />-->
+    </root>
+    <root level="INFO">
+        <!-- 控制台输出 -->
+        <appender-ref ref="STDOUT" />
+        <!-- 文件输出 -->
+        <appender-ref ref="ERROR" />
+        <appender-ref ref="INFO" />
+        <appender-ref ref="WARN" />
+        <!--    <appender-ref ref="DEBUG" />-->
     </root>
 </configuration>
