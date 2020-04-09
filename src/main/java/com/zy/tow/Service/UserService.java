@@ -8,7 +8,7 @@ public interface UserService {
     List<User> getAll();
 
     User getOne(Long id);
-
+    String getUserName ();
     void insert(User user);
 
     void update(User user);
