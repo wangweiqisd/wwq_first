@@ -49,7 +49,7 @@ public class CustomRealm extends AuthorizingRealm {
         String name =authenticationToken.getPrincipal().toString();
         User user =loginService.getUserByName(name);
         if(user==null){
-            //这里返回后会报出对应异常
+            //这里返回后会报出对应异常1
             return null ;
         }else {
             //这里验证authenticationToke和simpleAuthenticationInfo的信息
