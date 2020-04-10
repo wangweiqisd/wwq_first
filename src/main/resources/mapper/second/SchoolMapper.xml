@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.tow.Mapper.second.SchoolMapper" >
+    <resultMap id="BaseResultMap" type="com.zy.tow.bean.School" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="school_name" property="school_name" jdbcType="VARCHAR" />
+        <result column="school_describe" property="school_describe" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, school_name, school_describe
+    </sql>
+    <select id="getSchool" resultMap="BaseResultMap"  >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM school
+    </select>
+</mapper>

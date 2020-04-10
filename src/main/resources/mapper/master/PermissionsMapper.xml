@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.tow.Mapper.master.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.zy.tow.bean.Permissions" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="permissionsName" property="permissionsName" jdbcType="VARCHAR" />
+
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, permissionsName
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+        select
+        <include refid="Base_Column_List"></include>
+        from permissions
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM permissions
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" >
+    INSERT INTO
+            permissions
+            (id,roleName)
+        VALUES
+            (#{id}, #{permissionsName})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Long" >
+        DELETE FROM
+             permissions
+       WHERE
+             user_id =#{id}
+    </delete>
+</mapper>
